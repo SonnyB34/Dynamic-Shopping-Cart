@@ -6,7 +6,6 @@ const totalPriceSpan = document.getElementById('total-price');
 
 let totalPrice = 0;
 
-
 addProductButton.addEventListener('click', addProduct);
 
 function addProduct() {
@@ -24,11 +23,15 @@ function addProduct() {
 
   const removeBtn = document.createElement('button');
   removeBtn.textContent = 'Remove Product';
+  removeBtn.addEventListener('click', removeItem);
 
   li.appendChild(removeBtn);
   cart.appendChild(li);
 
   updateTotalPrice(price);
+
+  productNameInput.value = '';
+  productPriceInput.value = '';
 }
 
 // Function to update the total price
@@ -44,4 +47,3 @@ function removeItem(event) {
   updateTotalPrice(-price);
   item.remove();
 }
-
