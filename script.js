@@ -10,7 +10,7 @@ let totalPrice = 0;
 addProductButton.addEventListener('click', addProduct);
 
 function addProduct() {
-  const name = productNameInput.ariaValueMax.trim();
+  const name = productNameInput.value;
   const price = parseFloat(productPriceInput.value);
 
   if (!name || isNaN(price) || price < 0) {
@@ -19,6 +19,16 @@ function addProduct() {
   }
 
   const li = document.createElement('li');
+  li.dataset.price = price;
+  li.textContent = `${name} - $${price.toFixed(2)}`;
+
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = 'Remove Product';
+
+  li.appendChild(removeBtn);
+  cart.appendChild(li);
+
+  updateTotalPrice(price);
 }
 
 // Function to update the total price
