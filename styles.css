@@ -2,19 +2,47 @@ body {
   font-family: Arial, sans-serif;
   margin: 20px;
   line-height: 1.6;
+  background-color: lightgray;
+  
 }
 
 h1 {
+  font-size: 2.75rem;
   text-align: center;
+  
+}
+
+input {
+  font-size: 1.5rem;
+}
+
+#add-product {
+  font-size: 1.25rem;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+#add-product:hover {
+  background-color: green;
 }
 
 h3 {
+  font-size: 2rem;
   text-align: center;
 }
+
+#dollar-sign {
+  color: green;
+}
+
+#total-price {
+  color: green;
+} 
  
 #product-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 10px;
   margin-bottom: 20px;
@@ -30,12 +58,19 @@ h3 {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
  
 .cart-item span {
   flex: 1;
 }
- 
-.cart-item button {
-  margin-left: 10px;
+
+.remove-btn {
+  font-size: 1.2rem;
+  border-radius: 8px;
+}
+
+.remove-btn:hover {
+  background-color: red;
 }

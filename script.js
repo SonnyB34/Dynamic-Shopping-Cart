@@ -13,16 +13,18 @@ function addProduct() {
   const price = parseFloat(productPriceInput.value);
 
   if (!name || isNaN(price) || price < 0) {
-    alert('Must have a product name and price!');
+    alert('Must have a product name and price(NO NEGATIVE VALUES)!');
     return;
   }
 
   const li = document.createElement('li');
+  li.classList.add('cart-item');
   li.dataset.price = price;
   li.textContent = `${name} - $${price.toFixed(2)}`;
 
   const removeBtn = document.createElement('button');
-  removeBtn.textContent = 'Remove Product';
+  removeBtn.classList.add('remove-btn');
+  removeBtn.textContent = 'Remove';
   removeBtn.addEventListener('click', removeItem);
 
   li.appendChild(removeBtn);
@@ -32,6 +34,9 @@ function addProduct() {
 
   productNameInput.value = '';
   productPriceInput.value = '';
+  
+  productNameInput.focus();
+
 }
 
 // Function to update the total price
